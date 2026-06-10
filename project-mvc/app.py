@@ -1,5 +1,9 @@
-from controllers.user_controller import run_app   
+import os
 
-if __name__ == "__main__":   
+# Membaca variabel lingkungan dengan nilai default
+user_name = os.getenv('APP_USER', 'Guest')
+app_env = os.getenv('APP_ENV', 'development')
 
-    run_app()
+if __name__ == "__main__":
+    print(f"Halo {user_name}! Aplikasi ini berjalan di dalam kontainer Docker.")
+    print(f"Status Lingkungan: [{app_env}]")
